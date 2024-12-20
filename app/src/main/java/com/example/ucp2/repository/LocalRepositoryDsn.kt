@@ -8,12 +8,12 @@ class LocalRepositoryDsn(
     private val dosenDao: DosenDao
 ) : RepositoryDosen {
 
-    // Menambahkan dosen baru
+
     override suspend fun insertDosen(dosen: Dosen) {
         dosenDao.insertDosen(dosen)
     }
 
-    // Mengambil semua data dosen
+
     override fun getAllDosen(): Flow<List<Dosen>> {
         return dosenDao.getAllDosen()
     }
