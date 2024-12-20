@@ -24,7 +24,7 @@ class DetailDosenViewModel(
 
     private val _nidn: String = checkNotNull(savedStateHandle[DestinasiDetailDosen.KODE_DOSEN])
 
-    val detailUiState: StateFlow<DetailUiState> = repositoryDosen.getAllDosen(_nidn)
+    val detailUiState: StateFlow<DetailUiState> = repositoryDosen.getDosen(_nidn)
         .filterNotNull()
         .map{
             DetailUiState(

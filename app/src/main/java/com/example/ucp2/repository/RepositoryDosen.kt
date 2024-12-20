@@ -7,4 +7,6 @@ interface RepositoryDosen {
     suspend fun insertDosen(dosen: Dosen)
 
     fun getAllDosen(): Flow<List<Dosen>>
+
+    fun getDosen(nidn: String) : Flow<Dosen>
 }
