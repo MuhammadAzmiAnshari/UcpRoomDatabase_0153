@@ -21,6 +21,7 @@ class DetailDosenViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryDosen: RepositoryDosen,
 ) : ViewModel(){
+
     private val _nidn: String = checkNotNull(savedStateHandle[DestinasiDetailDosen.KODE_DOSEN])
 
     val detailUiState: StateFlow<DetailUiState> = repositoryDosen.getAllDosen(_nidn)
@@ -67,11 +68,11 @@ data class DetailUiState(
 }
 
 
-fun Dosen.toDetailUiEvent(): DosenEvent {
-    return DosenEvent(
-        nidn = nidn,
-        nama = nama,
-        jenisKelamin = jenisKelamin,
+fun Dosen.toDetailUiEvent(): DosenEvent{
+return DosenEvent(
+    nidn =nidn,
+    nama = nama,
+    jenisKelamin = jenisKelamin
     )
 }
 
