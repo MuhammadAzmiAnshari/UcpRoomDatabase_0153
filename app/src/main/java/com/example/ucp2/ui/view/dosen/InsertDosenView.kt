@@ -24,12 +24,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ucp2.ui.customwidget.CustomTopAppBar
+import com.example.ucp2.ui.navigation.AlamatNavigasi
 import com.example.ucp2.ui.viewmodel.DosenEvent
 import com.example.ucp2.ui.viewmodel.DosenUiState
 import com.example.ucp2.ui.viewmodel.DosenViewModel
 import com.example.ucp2.ui.viewmodel.FormErrorState
 import com.example.ucp2.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
+
+object DestinasiInsert : AlamatNavigasi {
+    override val route: String = "insert_mhs"
+}
 
 @Composable
 fun InsertDosenView(
