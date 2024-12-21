@@ -5,6 +5,9 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.ucp2.KrsApp
 import com.example.ucp2.repository.LocalRepositoryDsn
+import com.example.ucp2.ui.viewmodel.dosen.DetailDosenViewModel
+import com.example.ucp2.ui.viewmodel.dosen.DosenViewModel
+import com.example.ucp2.ui.viewmodel.dosen.HomeDosenViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {

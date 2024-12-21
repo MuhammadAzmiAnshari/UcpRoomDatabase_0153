@@ -23,10 +23,10 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ucp2.data.entity.Dosen
 import com.example.ucp2.ui.customwidget.CustomTopAppBar
-import com.example.ucp2.ui.viewmodel.DetailDosenViewModel
-import com.example.ucp2.ui.viewmodel.DetailUiState
+import com.example.ucp2.ui.viewmodel.dosen.DetailDosenViewModel
+import com.example.ucp2.ui.viewmodel.dosen.DetailUiState
 import com.example.ucp2.ui.viewmodel.PenyediaViewModel
-import com.example.ucp2.ui.viewmodel.toDosenEntity
+import com.example.ucp2.ui.viewmodel.dosen.toDosenEntity
 
 @Composable
 fun DetailDosenView(
@@ -35,7 +35,7 @@ fun DetailDosenView(
     onBack: () -> Unit = { },
 
 
-) {
+    ) {
     Scaffold(
         topBar = {
             CustomTopAppBar(
@@ -88,7 +88,7 @@ fun BodyDetailDosen(
     modifier: Modifier = Modifier,
     detailUiState: DetailUiState = DetailUiState(),
 
-) {
+    ) {
     when {
         detailUiState.isLoading -> {
             Box(

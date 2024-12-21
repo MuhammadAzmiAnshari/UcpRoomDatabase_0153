@@ -1,4 +1,4 @@
-package com.example.ucp2.ui.viewmodel
+package com.example.ucp2.ui.viewmodel.dosen
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -14,7 +14,6 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 
 
 class DetailDosenViewModel(
@@ -68,7 +67,7 @@ data class DetailUiState(
 }
 
 
-fun Dosen.toDetailUiEvent(): DosenEvent{
+fun Dosen.toDetailUiEvent(): DosenEvent {
 return DosenEvent(
     nidn =nidn,
     nama = nama,
