@@ -43,6 +43,7 @@ import com.example.ucp2.ui.viewmodel.PenyediaViewModel
 fun HomeDosenView(
     viewModel: HomeDosenViewModel = viewModel(factory = PenyediaViewModel.Factory),
     onAddDosen: () -> Unit = { },
+    onBack: () -> Unit = { },
     onDetailClick: (String) -> Unit = { },
     modifier: Modifier = Modifier
 ) {
@@ -50,8 +51,8 @@ fun HomeDosenView(
         topBar = {
             CustomTopAppBar(
                 judul = "Daftar Dosen",
-                showBackButton = false,
-                onBack = { },
+                showBackButton = true,
+                onBack = onBack,
                 modifier = Modifier
             )
         },

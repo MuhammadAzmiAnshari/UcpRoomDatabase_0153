@@ -5,18 +5,35 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.ucp2.data.entity.Dosen
 import com.example.ucp2.data.entity.MataKuliah
 import com.example.ucp2.repository.LocalRepositoryDsn
 import com.example.ucp2.repository.LocalRepositoryMk
+import com.example.ucp2.repository.RepositoryDosen
+import com.example.ucp2.repository.RepositoryMataKuliah
 import kotlinx.coroutines.launch
 
 class MataKuliahViewModel(
-    private val repositoryMataKuliah: LocalRepositoryMk,
-    private val repositoryDosen: LocalRepositoryDsn
+    private val repositoryMataKuliah: RepositoryMataKuliah,
+    private val repositoryDosen: RepositoryDosen
 
 ) : ViewModel() {
     var uiState by mutableStateOf(MataKuliahUiState())
+        private set
 
+    var dosentList by mutableStateOf<List<Dosen>>(emptyList())
+        private set
+    init {
+        viewModelScope.launch {
+            repositoryDosen.getAllDosen().collect {dosentList ->
+                this@MataKuliahViewModel.dosentList = dosentList
+                updateUiState()
+            }
+        }
+    }
+    private fun updateUiState(){
+        uiState = uiState.copy(dosentList = dosentList)
+    }
 
     fun updateState(mataKuliahEvent: MataKuliahEvent) {
         uiState = uiState.copy(
@@ -91,6 +108,7 @@ data class MataKuliahUiState(
     val mataKuliahEvent: MataKuliahEvent = MataKuliahEvent(),
     val isEntryValid: FormErrorState = FormErrorState(),
     val snackBarMessage: String? = null,
+    val dosentList: List<Dosen> = emptyList()
 )
 
 data class FormErrorState(

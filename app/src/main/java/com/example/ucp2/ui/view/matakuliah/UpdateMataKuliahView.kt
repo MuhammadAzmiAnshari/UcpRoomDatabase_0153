@@ -91,8 +91,10 @@ fun UpdateMataKuliahView(
                             }
                         }
                     }
-                }
+                },
+                dosenList = uiState.dosentList
             )
+
         }
     }
 }

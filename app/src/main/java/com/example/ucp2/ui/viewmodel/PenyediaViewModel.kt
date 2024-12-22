@@ -36,8 +36,8 @@ object PenyediaViewModel {
         }
         initializer {
             MataKuliahViewModel(
-                KrsApp().containerApp.RepositoryMataKuliah as LocalRepositoryMk,
-                KrsApp().containerApp.RepositoryDosen as LocalRepositoryDsn
+                KrsApp().containerApp.RepositoryMataKuliah,
+                KrsApp().containerApp.RepositoryDosen
             )
         }
         initializer {
@@ -55,6 +55,7 @@ object PenyediaViewModel {
             UpdateMataKuliahViewModel(
                 createSavedStateHandle(),
                 KrsApp().containerApp.RepositoryMataKuliah as LocalRepositoryMk,
+                KrsApp().containerApp.RepositoryDosen as LocalRepositoryDsn,
             )
         }
     }
