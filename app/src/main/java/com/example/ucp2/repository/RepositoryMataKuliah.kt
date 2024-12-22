@@ -12,5 +12,5 @@ interface RepositoryMataKuliah {
 
     suspend fun deleteMataKuliah(matakuliah: MataKuliah)
 
-    fun getDetailMataKuliah(kode: String): Flow<List<MataKuliah>>
+    fun getDetailMataKuliah(kode: String): Flow<MataKuliah>
 }
