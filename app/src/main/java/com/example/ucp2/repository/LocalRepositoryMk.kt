@@ -29,7 +29,7 @@ class LocalRepositoryMk(
     }
 
     // Mendapatkan detail mata kuliah berdasarkan kode
-    override fun getDetailMataKuliah(kode: String): Flow<List<MataKuliah>> {
+    override fun getDetailMataKuliah(kode: String): Flow<MataKuliah> {
         return mataKuliahDao.getDetailMataKuliah(kode)
     }
 }

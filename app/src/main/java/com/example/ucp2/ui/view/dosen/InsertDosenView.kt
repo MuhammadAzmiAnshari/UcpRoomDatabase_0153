@@ -33,7 +33,7 @@ import com.example.ucp2.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 object DestinasiInsert : AlamatNavigasi {
-    override val route: String = "insert_mhs"
+    override val route: String = "insert_dsn"
 }
 
 @Composable

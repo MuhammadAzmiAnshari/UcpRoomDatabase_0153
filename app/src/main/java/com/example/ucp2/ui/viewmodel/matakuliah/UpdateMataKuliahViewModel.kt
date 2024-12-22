@@ -7,6 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ucp2.data.entity.MataKuliah
+import com.example.ucp2.repository.LocalRepositoryMk
 import com.example.ucp2.repository.RepositoryMataKuliah
 import com.example.ucp2.ui.navigation.DestinasiUpdateMataKuliah
 import kotlinx.coroutines.flow.filterNotNull
@@ -15,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class UpdateMataKuliahViewModel(
     savedStateHandle: SavedStateHandle,
-    private val repositoryMataKuliah: RepositoryMataKuliah
+    private val repositoryMataKuliah: LocalRepositoryMk
 ) : ViewModel(){
     var updateUiState by mutableStateOf(MataKuliahUiState())
         private set

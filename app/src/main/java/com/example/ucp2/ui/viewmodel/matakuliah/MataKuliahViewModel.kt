@@ -6,11 +6,13 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ucp2.data.entity.MataKuliah
+import com.example.ucp2.repository.LocalRepositoryDsn
 import com.example.ucp2.repository.LocalRepositoryMk
 import kotlinx.coroutines.launch
 
 class MataKuliahViewModel(
     private val repositoryMataKuliah: LocalRepositoryMk,
+    private val repositoryDosen: LocalRepositoryDsn
 
 ) : ViewModel() {
     var uiState by mutableStateOf(MataKuliahUiState())

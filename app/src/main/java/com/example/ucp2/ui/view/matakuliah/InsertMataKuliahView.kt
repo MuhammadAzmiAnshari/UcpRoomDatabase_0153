@@ -79,7 +79,7 @@ fun InsertMataKuliahView(
             )
 
             //Isi Body
-            InsertBodyMk(
+            InsertBodyMataKuliah(
                 uiState = uiState,
                 onValueChange = { updateEvent ->
                     viewModel.updateState(updateEvent)
@@ -96,7 +96,7 @@ fun InsertMataKuliahView(
 }
 
 @Composable
-fun InsertBodyMk(
+fun InsertBodyMataKuliah(
     modifier: Modifier = Modifier,
     onValueChange: (MataKuliahEvent) -> Unit,
     uiState: MataKuliahUiState,
