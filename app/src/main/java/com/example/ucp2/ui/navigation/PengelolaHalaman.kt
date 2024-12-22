@@ -11,7 +11,7 @@ import com.example.ucp2.ui.view.dosen.HomeDosenView
 import com.example.ucp2.ui.view.dosen.InsertDosenView
 
 @Composable
-fun PengelolaHalamanDosen(
+fun PengelolaHalaman(
     navController: NavHostController = rememberNavController(),
     modifier: Modifier = Modifier
 ) {
