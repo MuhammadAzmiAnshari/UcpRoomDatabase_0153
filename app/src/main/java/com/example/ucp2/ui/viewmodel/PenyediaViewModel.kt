@@ -8,7 +8,6 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.ucp2.KrsApp
 import com.example.ucp2.repository.LocalRepositoryDsn
 import com.example.ucp2.repository.LocalRepositoryMk
-import com.example.ucp2.ui.viewmodel.dosen.DetailDosenViewModel
 import com.example.ucp2.ui.viewmodel.dosen.DosenViewModel
 import com.example.ucp2.ui.viewmodel.dosen.HomeDosenViewModel
 import com.example.ucp2.ui.viewmodel.matakuliah.HomeMataKuliahViewModel
@@ -25,12 +24,6 @@ object PenyediaViewModel {
         }
         initializer {
             HomeDosenViewModel(
-                KrsApp().containerApp.RepositoryDosen
-            )
-        }
-        initializer {
-            DetailDosenViewModel(
-                createSavedStateHandle(),
                 KrsApp().containerApp.RepositoryDosen
             )
         }
